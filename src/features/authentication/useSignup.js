@@ -14,7 +14,7 @@ export function useSignup() {
         "User successfully created. Please confirm your email address to proceed",
         { duration: 6000 }
       );
-      navigate("/timetable", { replace: true });
+      navigate("/confirmaccount", { replace: true });
     },
     onError: (err) => {
       toast.error(err.message);

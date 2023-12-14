@@ -15,11 +15,15 @@ const Layout = styled.div`
 `;
 
 const LayoutContent = styled.div`
-  padding: 3rem 5rem;
+  padding: 3rem 4rem;
   margin: 0 auto;
 
+  @media (max-width: 45em) {
+    padding: 3rem 3rem;
+  }
+
   @media (max-width: 26.875em) {
-    padding: 1.5rem 2.5rem;
+    padding: 1.5rem 2rem;
   }
 `;
 

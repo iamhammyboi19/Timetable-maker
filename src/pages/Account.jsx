@@ -7,6 +7,19 @@ import InnerLabelInputDiv from "../ui/InnerLabelInputDiv";
 import Title from "../ui/Title";
 import { useUpdateUser } from "../features/authentication/useUpdateUser";
 import toast from "react-hot-toast";
+import styled from "styled-components";
+
+const DivCon = styled.div`
+  max-width: 50rem;
+  margin: 0 auto;
+  border: 1px solid #d6d6d6;
+  padding: 5rem;
+
+  @media (max-width: 48.875em) {
+    max-width: 40rem;
+    padding: 2.5rem;
+  }
+`;
 
 function Account() {
   const {
@@ -37,14 +50,7 @@ function Account() {
     <div>
       <Title as="h1">Account</Title>
 
-      <div
-        style={{
-          maxWidth: "50rem",
-          margin: "0 auto",
-          border: "1px solid #d6d6d6",
-          padding: "5rem",
-        }}
-      >
+      <DivCon>
         <h5
           style={{
             marginBottom: "2rem",
@@ -83,7 +89,7 @@ function Account() {
             />
           </InnerLabelInputDiv>
         </InnerForm>
-      </div>
+      </DivCon>
     </div>
   );
 }

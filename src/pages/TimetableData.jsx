@@ -66,6 +66,7 @@ const DownloadBtn = styled.button`
   gap: 0.5rem;
   margin-top: 2rem;
   margin-left: auto;
+  margin-right: 2rem;
   font-weight: 600;
   background-color: var(--oc-gray-3);
   border: 0.3px solid var(--oc-gray-9);
@@ -79,6 +80,7 @@ const DownloadBtn = styled.button`
 
 const TableWrapper = styled.div`
   padding: 2rem;
+  position: relative;
   /* @media (max-width: 56.625em) {
     padding: 0.5rem;
   } */
@@ -106,8 +108,10 @@ function TimetableData() {
   const allDays = getAllDays(timetable?.startDate, timetable?.endDate);
   const allTimes = getAllTime(timetable?.startTime, timetable?.endTime);
 
+  console.log(allTimes, "allTimes");
+
   // CALCULATE DAYS(COLUMNS) AND EACH TIME (ROWS)
-  const calcTableDataRange = allDays?.length * allTimes?.length;
+  const calcTableDataRange = allDays?.length * (allTimes?.length - 1);
   const matrix = Array.from({ length: calcTableDataRange }, (v, i) => i);
   const eachCourseMaxtrix =
     timetable.courses.length > 0
@@ -292,7 +296,12 @@ function TimetableData() {
               ))}
             </Days>
           </TimetableLayoutTitle>
-          <GridTemplatesSub cols={allDays.length} rows={allTimes.length}>
+
+          <GridTemplatesSub
+            cols={allDays.length}
+            rows={allTimes.length - 1}
+            allTimes={allTimes}
+          >
             {eachCourseMaxtrix.map((data) => (
               <TimetableCardSub
                 key={data.courseId}
@@ -314,6 +323,7 @@ function TimetableData() {
               ))}
             </Days>
           </TimetableLayoutTitle>
+
           <GridTemplatesSub cols={allDays.length} rows={allTimes.length}>
             {timetable.courses.map((data) => (
               <TimetableCardSub

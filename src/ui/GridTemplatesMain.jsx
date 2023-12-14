@@ -9,9 +9,11 @@ const StyledGridTemplates = styled.ul`
       ? css`
           grid-template-columns: repeat(${props.cols}, 1fr);
         `
-      : ""}/* @media (max-width: 26.875em) {
+      : ""}
+
+  @media (max-width: 26.875em) {
     grid-template-columns: repeat(2, 1fr);
-  } */
+  }
 `;
 
 function GridTemplatesMain({ children, cols }) {

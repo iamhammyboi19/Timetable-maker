@@ -8,7 +8,7 @@ const StyledSideBar = styled.aside`
   padding: 1.5rem;
   gap: 2rem;
   border-right: 0.5px solid var(--oc-gray-5);
-  height: 100vh;
+  height: 100%;
 
   & a {
     background-color: var(--oc-gray-0);

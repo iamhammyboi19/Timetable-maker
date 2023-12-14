@@ -76,3 +76,11 @@ export function restructureNeuCourse(courseinfo) {
 
   return neuCourse;
 }
+
+export function generateSideRowTime(startTime, endTime) {
+  const totalLength = endTime + 1 - startTime;
+  console.log("totalLength", totalLength);
+  const arr = Array.from({ length: totalLength }, (v, i) => startTime + i);
+  console.log("arr", arr);
+  return arr;
+}

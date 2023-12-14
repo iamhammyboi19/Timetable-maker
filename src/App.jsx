@@ -16,6 +16,8 @@ import ProtectedRoutes from "./features/authentication/ProtectedRoutes";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
+import ConfirmEmailPage from "./ui/ConfirmEmailPage";
+import PageNotFound from "./pages/PageNotFound";
 
 // import TimeTableContextProvider from "./context/TimeTableContext";
 
@@ -66,6 +68,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/confirmaccount" element={<ConfirmEmailPage />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
       <Toaster position="top-center" reverseOrder={false} />
