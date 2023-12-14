@@ -324,7 +324,11 @@ function TimetableData() {
             </Days>
           </TimetableLayoutTitle>
 
-          <GridTemplatesSub cols={allDays.length} rows={allTimes.length}>
+          <GridTemplatesSub
+            cols={allDays.length}
+            rows={allTimes.length - 1}
+            allTimes={allTimes}
+          >
             {timetable.courses.map((data) => (
               <TimetableCardSub
                 key={data.courseId}
