@@ -108,8 +108,6 @@ function TimetableData() {
   const allDays = getAllDays(timetable?.startDate, timetable?.endDate);
   const allTimes = getAllTime(timetable?.startTime, timetable?.endTime);
 
-  console.log(allTimes, "allTimes");
-
   // CALCULATE DAYS(COLUMNS) AND EACH TIME (ROWS)
   const calcTableDataRange = allDays?.length * (allTimes?.length - 1);
   const matrix = Array.from({ length: calcTableDataRange }, (v, i) => i);
@@ -147,7 +145,7 @@ function TimetableData() {
     html2canvas(input)
       .then((canvas) => {
         const imgData = canvas.toDataURL("image/png");
-        const pdf = new jsPDF("p", "px", "a4", true);
+        const pdf = new jsPDF("p", "px", "a4", false);
         const imgProps = pdf.getImageProperties(imgData);
         const pdfWidth = pdf.internal.pageSize.getWidth();
         const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
@@ -166,7 +164,6 @@ function TimetableData() {
   useEffect(
     function () {
       if (timetable.tableType === "NEU" && stateCourseInfo.length > 0) {
-        console.log("restructer");
         const neucourse = restructureNeuCourseWrapped(stateCourseInfo);
         neucourse &&
           neucourse?.forEach((items) => {

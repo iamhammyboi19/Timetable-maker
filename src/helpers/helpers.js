@@ -58,8 +58,9 @@ export function restructureNeuCourse(courseinfo) {
       }))
       .map((item) => {
         return {
+          //
           rows:
-            timeModel.find((el) => el?.at(1) === item.startsAt)?.at(0) + 1 - 7,
+            timeModel.find((el) => el?.at(1) === item.startsAt)?.at(0) + 1 - 9,
           cols:
             daysModel
               .find(
