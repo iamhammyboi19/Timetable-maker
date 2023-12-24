@@ -23,7 +23,7 @@ function Signup() {
   }
 
   return (
-    <div style={{ padding: "3rem" }}>
+    <div style={{ paddingLeft: "3rem", paddingRight: "3rem" }}>
       <Form type="signup" onSubmit={handleSubmit(onSubmit)}>
         <Title as="h4">Timetable Maker</Title>
         <DescriptionInForm fade="no">

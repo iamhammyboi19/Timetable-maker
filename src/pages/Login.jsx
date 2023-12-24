@@ -32,7 +32,7 @@ function Login() {
   }
 
   return (
-    <div style={{ padding: "3rem" }}>
+    <div style={{ paddingLeft: "3rem", paddingRight: "3rem" }}>
       <Form type="login" onSubmit={handleSubmit(onSubmit)}>
         <Title as="h1">Log in to your account</Title>
         <div style={{ width: "100%", marginBottom: "2rem" }}>

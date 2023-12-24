@@ -32,7 +32,7 @@ function ForgotPassword() {
   }
 
   return (
-    <div style={{ padding: "3rem" }}>
+    <div style={{ paddingLeft: "3rem", paddingRight: "3rem" }}>
       <Form type="login" onSubmit={handleSubmit(onSubmit)}>
         <DescriptionInForm>
           Enter the email address linked to your timetable maker account to
